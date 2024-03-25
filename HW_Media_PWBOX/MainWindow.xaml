@@ -1,0 +1,48 @@
+﻿<Window x:Class="HW_Media_PWBOX.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW_Media_PWBOX"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="MediumVioletRed">
+        <Slider x:Name="slider_video" HorizontalAlignment="Left" Margin="40,306,0,0" VerticalAlignment="Top" Width="704" ValueChanged="slider_video_ValueChanged"/>
+        <Slider x:Name="slider_audio" HorizontalAlignment="Left" Margin="617,352,0,0" VerticalAlignment="Top" Width="127" ValueChanged="slider_audio_ValueChanged"  Maximum="1"/>
+        <Label Content="Громкость" HorizontalAlignment="Left" Margin="544,344,0,0" VerticalAlignment="Top"/>
+        <MediaElement x:Name="mediaelement" HorizontalAlignment="Left" Height="291" Margin="40,10,0,0" VerticalAlignment="Top" Width="512" OpacityMask="#FF151414" MediaOpened="mediaelement_MediaOpened" LoadedBehavior="Manual"/>
+        <Button x:Name="bt_open" Content="" HorizontalAlignment="Left" Margin="40,333,0,0" VerticalAlignment="Top" Width="83" Height="64" Click="Open_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Open.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="bpause" Content="" HorizontalAlignment="Left" Margin="141,333,0,0" VerticalAlignment="Top" Width="95" Height="64" RenderTransformOrigin="0.451,0.485" Click="Pause_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Pause.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="bplay" Content="" HorizontalAlignment="Left" Margin="259,333,0,0" VerticalAlignment="Top" Width="89" Height="64" RenderTransformOrigin="0.476,0.485" Click="Play_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Play.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="bstop" Content="" HorizontalAlignment="Left" Margin="363,333,0,0" VerticalAlignment="Top" Width="98" Height="64" Click="Stop_Click" RenderTransformOrigin="0.483,0.482">
+            <Button.Foreground>
+                <ImageBrush/>
+            </Button.Foreground>
+            <Button.Background>
+                <ImageBrush ImageSource="Stop.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="bdelete" Content="" HorizontalAlignment="Left" Margin="466,333,0,0" VerticalAlignment="Top" Width="63" Height="64" Click="bdelete_Click" >
+
+            <Button.Background>
+                <ImageBrush ImageSource="delete.png"/>
+            </Button.Background>
+
+        </Button>
+        <ListView x:Name="LV1" Margin="557,39,10,118">
+        </ListView>
+        <Label Content="PLAYLIST" Margin="617,0,36,362" FontSize="25"/>
+    </Grid>
+</Window>

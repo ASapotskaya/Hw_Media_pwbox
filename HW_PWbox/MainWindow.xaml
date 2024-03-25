@@ -1,0 +1,81 @@
+﻿<Window x:Class="HW_PWbox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW_PWbox"
+        mc:Ignorable="d"
+       Title="MainWindow" Height="380" Width="550" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="410"/>
+            <ColumnDefinition Width="160"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1">
+
+                <Grid Background="MintCream">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26"/>
+                        <RowDefinition Height="34"/>
+                        <RowDefinition Height="36"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="138,0,138,32" Grid.RowSpan="2" Width="132" Content="- PasswordBox -"/>
+
+                    <PasswordBox Name="pwdBox" Grid.Row="1" Width="400" Height="26" HorizontalAlignment="Left"
+              VerticalAlignment="Top" Margin="3"/>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" >
+                        <Button x:Name="bt_clear" Content="Clear" Width="80" Height="30" Margin="3" Click="bt_clear_Click"/>
+                        <Button x:Name="bt_paste" Content="Paste Into" Width="80" Height="30" Margin="3" Click="bt_paste_Click"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1">
+
+                <Grid Background="Lavender">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26"/>
+                        <RowDefinition Height="34"/>
+                        <RowDefinition Height="36"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content=" - Scratch TextBox -"  Grid.Row="0" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="128,0,128,30" Grid.RowSpan="2"/>
+                    <TextBox Name="scratchTextBox" Width="400" Height="26" Grid.Row="1" TextChanged="scratchTextBox_TextChanged"  />
+                    <Button x:Name="bt_copy" Content="Copy Contents" Width="80" Height="30" Margin="3" Grid.Row="2" Click="Button_Click"/>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1">
+            <StackPanel  VerticalAlignment="Center"  HorizontalAlignment="Left" Background="AliceBlue">
+                <Label Content="Change Count"/>
+                <Label FontWeight="DemiBold" FontSize="16" Name="pwChagesLabel">0</Label>
+                <Label Content="Masking Character"/>
+                <ComboBox Name="listMaskChar" IsEditable="False" Width="56"   HorizontalAlignment="Left"
+            Margin="5"  Height="39" SelectionChanged="listMaskChar_SelectionChanged" >
+
+                    <ComboBoxItem>+</ComboBoxItem>
+                    <ComboBoxItem>*</ComboBoxItem>
+                    <ComboBoxItem>@</ComboBoxItem>
+
+                </ComboBox>
+                <Label Content="Max Input Length:"/>
+                <ListBox Name="selectMaxLen" Height="42" Width="82" HorizontalAlignment="Left" Margin="5">
+                    <ListBoxItem></ListBoxItem>
+                </ListBox>
+                <Label>Осталось символов:</Label>
+                <Label Name="currentMaxLen" FontSize="16" FontWeight="SemiBold"  ></Label>
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>
